@@ -28,7 +28,7 @@ def lambda_handler(event, context):
     	],)
 			print("Snapshot created and Tag added to volume")
  
- #Delete Volumes
+ #Delete Volumes ref: https://github.com/tprakash17/Lambda-delete-unused-EBS/blob/master/lambda-function-delete-EBS.py
 	for vol in ec2.volumes.all():
 			if  vol.state=='available' and vol.tags is not None:
 				for tag in vol.tags:
